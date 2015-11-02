@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 
 
 var path = {
-    jade: ['jade/*.jade'],
+    jade: ['jade/**/*.jade'],
     html: 'public/'
 };
 

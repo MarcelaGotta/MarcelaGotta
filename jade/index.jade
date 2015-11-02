@@ -1,41 +1,12 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="en" data-ng-app="appMG")
     head
         meta(charset="UTF-8")
         title Document
         link(type="text/css" rel="stylesheet" href="css/general.min.css")
         link(type="text/css" rel="stylesheet" href="css/styles.min.css")
     body
-        header
-            a(href="#")
-                figure.logo
-                    img(src="img/logo.png" alt="Marcela Gotta")
-            nav.menu-principal
-                ul.nav-pills.nav.nav-stacked
-                    li.active
-                        a(href="#") Home
-                    li
-                        a(href="#") About Me
-                    li
-                        a(href="#") My Portfolio
-                    li
-                        a(href="#") Contact Me
-        main
-            div.container
-                section.row
-                    div.col-xs-12
-                        figure.image-me
-                            img(src="img/me-img.png")
-                        div#typed-strings
-                            p esta es una prueba
-                            p ese es el segundo parrafos
-                        span#typed
-                        form.form-inline
-                            input(type="text" placeholder="Your Name Here :)").form-control
-                            button(type="button" class="btn btn-success") Send
-                        
-                        
-        footer
-        
-        
+        ng-include( src=" 'inc/header.html' ")
+        div(ng-view='')
+        ng-include( src=" 'inc/footer.html' ")    
     script(src="js/scripts.min.js")

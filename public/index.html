@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="appMG">
   <head>
     <meta charset="UTF-8"/>
     <title>Document</title>
@@ -7,35 +7,9 @@
     <link type="text/css" rel="stylesheet" href="css/styles.min.css"/>
   </head>
   <body>
-    <header><a href="#">
-        <figure class="logo"><img src="img/logo.png" alt="Marcela Gotta"/></figure></a>
-      <nav class="menu-principal">
-        <ul class="nav-pills nav nav-stacked">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">My Portfolio</a></li>
-          <li><a href="#">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="container">
-        <section class="row">
-          <div class="col-xs-12">
-            <figure class="image-me"><img src="img/me-img.png"/></figure>
-            <div id="typed-strings">
-              <p>esta es una prueba</p>
-              <p>ese es el segundo parrafos</p>
-            </div><span id="typed"></span>
-            <form class="form-inline">
-              <input type="text" placeholder="Your Name Here :)" class="form-control"/>
-              <button type="button" class="btn btn-success">Send</button>
-            </form>
-          </div>
-        </section>
-      </div>
-    </main>
-    <footer></footer>
+    <ng-include src=" 'inc/header.html' "></ng-include>
+    <div ng-view=""></div>
+    <ng-include src=" 'inc/footer.html' ">   </ng-include>
   </body>
   <script src="js/scripts.min.js"></script>
 </html>
