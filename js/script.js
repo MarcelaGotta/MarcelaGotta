@@ -25,6 +25,7 @@ function myPresentation() {
     });
 }
 /* Js */
+$( document ).ready(function() {
     $(".typed").typed({
         stringsElement: $('.typed-strings'),
         backspace: 0,
@@ -39,3 +40,4 @@ function myPresentation() {
     $('.btn-skip').on('click', function(){
         return myPresentation();
     });
+});
