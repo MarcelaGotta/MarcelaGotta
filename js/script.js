@@ -11,21 +11,16 @@ appMG.controller('homeCrtl', ['$scope', function($scope){
     $scope.moreName = function() {
         $scope.nombre = " " + $scope.nombre;
     }
-}]);
-
-/*Functions*/
-function myPresentation() {
-    $('.box-presentation').show();
-    $('.box-what-name').hide();
-    $(this).hide();
-    $(".typed-present").typed({
-        stringsElement: $('.type-presentation'),
-        backspace: 0,
-        callback: function() {$('.btn-more').show()}
-    });
-}
-/* Js */
-$( document ).ready(function() {
+    function myPresentation() {
+        $('.box-presentation').show();
+        $('.box-what-name').hide();
+        $(this).hide();
+        $(".typed-present").typed({
+            stringsElement: $('.type-presentation'),
+            backspace: 0,
+            callback: function() {$('.btn-more').show()}
+        });
+    }
     $(".typed").typed({
         stringsElement: $('.typed-strings'),
         backspace: 0,
@@ -40,4 +35,5 @@ $( document ).ready(function() {
     $('.btn-skip').on('click', function(){
         return myPresentation();
     });
-});
+}]);
+
