@@ -5,13 +5,13 @@ main(data-ng-controller="homeCrtl")
                 figure.image-me
                     img(src="img/me-img.png")
                 .box-what-name
-                    div.typed-strings
+                    div
                         p Hi, I want to know more about you :)
                         p What is your name?
-                    span.typed
+                    span
                     form.form-inline.form-send
                         input(type="text" ng-model="nombre" title="Please, write your name" placeholder="Your Name Here :)" required='').form-control.nombre
-                        input(type="submit" class="btn btn-success btn-send" value="Send" data-ng-click="moreName()") 
+                        input(type="submit" class="btn btn-success btn-send" value="Send") 
                         button(type="button" class="btn btn-default btn-skip") Skip
                 .box-presentation
                     div.type-presentation

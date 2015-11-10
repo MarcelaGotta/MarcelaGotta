@@ -32,7 +32,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('js-min', function() {
-    return gulp.src('js/*.js')
+    return gulp.src(['js/angular.min.js', 'js/angular-route.min.js', 'js/jquery.min.js', 'js/bootstrap.min.js', 'js/typed.min.js', 'js/script.js' ])
         .pipe(concat('scripts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/js/'))
@@ -51,18 +51,17 @@ gulp.task('css-min', function() {
         .pipe(gulp.dest('public/css/'))
 });
 
-gulp.task('default',['sass', 'html', 'js-min', 'img-min', 'css-min'],  function() {
+gulp.task('default',['sass', 'html', 'img-min', 'js-min', 'css-min'],  function() {
     browserSync.init({
         server: {
             baseDir: "public/"
         }
     });
-	gulp.watch('jade/*.jade', ['html']);
+	gulp.watch('jade/**/*.jade', ['html']);
 	gulp.watch('scss/*.scss', ['sass']);
-	gulp.watch('js/*.js', ['js-min']);
 	gulp.watch('img/*.*', ['img-min']);
 	gulp.watch('css/*.css', ['css-min']);
-    
+    gulp.watch('js/*.js', ['js-min']);
     gulp.watch("public/**/*.*").on('change', browserSync.reload);
 	
 });

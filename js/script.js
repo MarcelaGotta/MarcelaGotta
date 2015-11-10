@@ -2,33 +2,52 @@ var appMG = angular.module('appMG', ['ngRoute']);
 appMG.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/', {
         templateUrl: 'home.html'
+    }).when('/about', {
+        templateUrl: 'about.html'
+    }).when('/portfolio', {
+        templateUrl: 'portfolio.html'
+    }).when('/contact', {
+        templateUrl: 'contact.html'
     }).otherwise({
         redirectTo: '/',
         templateUrl: '404.html'
     });
 }]);
 appMG.controller('homeCrtl', ['$scope', function($scope){
-    $scope.moreName = function() {
-        $scope.nombre = " " + $scope.nombre;
-    }
     function myPresentation() {
         $('.box-presentation').show();
         $('.box-what-name').hide();
         $(this).hide();
         $(".typed-present").typed({
-            stringsElement: $('.type-presentation'),
-            backspace: 0,
-            callback: function() {$('.btn-more').show()}
-        });
+            strings: ["I have experience in HTML", "I have experience in CSS", "I have experience in Javascript"],
+            backspace:  function(curString, curStrPos){
+            if (this.stop === true) {
+        return;
     }
-    $(".typed").typed({
-        stringsElement: $('.typed-strings'),
-        backspace: 0,
-        callback: function() {$('.form-send').show()}
-    });
+
+    var humanize = Math.round(Math.random() * (100 - 30)) + this.backSpeed;
+    var self = this;
+
+    self.timeout = setTimeout(function() {
+
+        var nextString = curString.substr(0, curStrPos);
+        self.el.text(nextString);
+
+        curStrPos=0
+
+        if (curStrPos <= self.stopNum) {
+            self.arrayPos++;
+            self.typewrite(self.strings[self.arrayPos], curStrPos);
+        }
+
+    }, humanize);
+                    },
+                callback: function() {$('.btn-more').show()}
+            });
+        }
+
     $('.btn-send').on('click', function(){
-        alert($('.nombre').val().length);
-        if($('.nombre').val().length !== 1) {
+        if($('.nombre').val().length !== 0) {
             return myPresentation();
         }
     });
