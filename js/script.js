@@ -20,28 +20,7 @@ appMG.controller('homeCrtl', ['$scope', function($scope){
         $(this).hide();
         $(".typed-present").typed({
             strings: ["I have experience in HTML", "I have experience in CSS", "I have experience in Javascript"],
-            backspace:  function(curString, curStrPos){
-            if (this.stop === true) {
-        return;
-    }
-
-    var humanize = Math.round(Math.random() * (100 - 30)) + this.backSpeed;
-    var self = this;
-
-    self.timeout = setTimeout(function() {
-
-        var nextString = curString.substr(0, curStrPos);
-        self.el.text(nextString);
-
-        curStrPos=0
-
-        if (curStrPos <= self.stopNum) {
-            self.arrayPos++;
-            self.typewrite(self.strings[self.arrayPos], curStrPos);
-        }
-
-    }, humanize);
-                    },
+            backspace:  function(){null},
                 callback: function() {$('.btn-more').show()}
             });
         }
