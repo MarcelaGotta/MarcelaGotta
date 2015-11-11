@@ -1,0 +1,32 @@
+.contact-me(data-ng-controller="contactCrtl")
+    #perspective
+      #container-box
+        .face.front
+          #white
+            h1
+              | Contact Me!
+              br
+              span --------
+        .face.back
+          #open
+          #folds
+          .button.con contact form
+          #letter
+            hgroup
+              h1#info P: 123.456.7890
+              h2 ---- or ----
+            p
+              form#myform(action='', method='post', novalidate='novalidate')
+                span.Name
+                  input.nameinput(type='text', name='Name', value='', size='40', aria-required='true', aria-invalid='false', placeholder='Name')
+                span.Email
+                  input.emailinput(type='email', name='Email', size='40', aria-required='true', aria-invalid='false', placeholder='Email')
+                span.Subject
+                  select.indent(name='Subject', aria-required='true', aria-invalid='false')
+                    option(value='None') Subject
+                    option(value='Job') Job Information
+                    option(value='Booking') Booking
+                span.Message
+                  textarea(name='Message', cols='40', rows='10', aria-invalid='false', placeholder='Message')
+                input.button.send(type='submit', value='Send')
+    #wrapper

@@ -1,3 +1,8 @@
+body {
+    margin-left: 280px;
+    font-size: 16px;
+}
+
 .typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
@@ -22,4 +27,29 @@
 
 .box-presentation, .btn-more {
     display: none ;
+}
+header {
+    width: 280px;
+    position: fixed;
+    z-index: 999;
+    background-color: #AC4147;
+    left: 0;
+    height: 100%;
+}
+.box-what-name {
+    text-align: center;
+}
+.presentation {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    font-size: 2em;
+    text-align: center;
+}
+
+.box-presentation {
+    .type-presentation {
+        font-family: 'Roboto Slab', serif;
+        font-size: 1.5em;
+        text-align: center;
+    }
 }

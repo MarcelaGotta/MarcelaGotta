@@ -5,12 +5,12 @@
       <div class="col-xs-12">
         <figure class="image-me"><img src="img/me-img.png"/></figure>
         <div class="box-what-name">
-          <div>
+          <div class="presentation">
             <p>Hi, I want to know more about you :)</p>
             <p>What is your name?</p>
           </div><span></span>
           <form class="form-inline form-send">
-            <input type="text" ng-model="nombre" title="Please, write your name" placeholder="Your Name Here :)" required="" class="form-control nombre"/>
+            <input type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required="" class="form-control nombre"/>
             <input type="submit" value="Send" class="btn btn-success btn-send"/>
             <button type="button" class="btn btn-default btn-skip">Skip</button>
           </form>

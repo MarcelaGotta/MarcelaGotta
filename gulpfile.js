@@ -25,14 +25,14 @@ gulp.task('html', function() {
 });
 
 gulp.task('sass', function () {
-  gulp.src('scss/*.scss')
+  gulp.src('scss/style.scss')
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(concat('styles.min.css'))
     .pipe(gulp.dest('public/css/'));
 });
 
 gulp.task('js-min', function() {
-    return gulp.src(['js/angular.min.js', 'js/angular-route.min.js', 'js/jquery.min.js', 'js/bootstrap.min.js', 'js/typed.min.js', 'js/script.js' ])
+    return gulp.src(['js/angular.min.js', 'js/angular-route.min.js', 'js/jquery.min.js', 'js/modernizr.custom.js', 'js/bootstrap.min.js', 'js/typed.min.js', 'js/elastic_grid.min.js', 'js/script.js' ])
         .pipe(concat('scripts.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('public/js/'))
