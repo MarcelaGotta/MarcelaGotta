@@ -144,7 +144,8 @@ appMG.controller('homeCrtl', ['$scope', function($scope){
         $(".typed-present").typed({
             strings: ["I have experience in HTML", "I have experience in CSS", "I have experience in Javascript"],
             backspace:  function(){null},
-                callback: function() {$('.btn-more').show()}
+            callback: function() {$('.btn-more').show()},
+            loop: true
             });
         }
 
