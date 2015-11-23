@@ -12,6 +12,7 @@ appMG.config(['$routeProvider', function($routeProvider){
         redirectTo: '/',
         templateUrl: '404.html'
     });
+    
 }]);
 appMG.controller('contactCrtl', ['$scope', '$rootScope', function($scope, $rootScope){
     /*/Still need to add:
@@ -136,15 +137,18 @@ $(function() {
 
 
 }]);
+appMG.controller('mainCrtl', ['$scope', function($scope){
+    $scope.$on('$viewContentLoaded', addJquery);
+    
+}]);
 appMG.controller('homeCrtl', ['$scope', function($scope){
     function myPresentation() {
         $('.box-presentation').show();
         $('.box-what-name').hide();
         $(this).hide();
         $(".typed-present").typed({
-            strings: ["I have experience in HTML", "I have experience in CSS", "I have experience in Javascript"],
+            strings: ["I have knowledge in HTML5", "I have knowledge in CSS3", "I have knowledge in Javascript", "I have knowledge in Jquery", "I have knowledge in Bootstrap", "I have knowledge in Angularjs", "I have knowledge in Responsive Design", "I have knowledge in SEO On Page", "I have knowledge in Wordpress", "I have knowledge in Json", "I have knowledge in SASS", "I have knowledge in Jade", "I have knowledge in Git", "I have knowledge in Gulp", "I have knowledge in Grunt", "I have knowledge in Photoshop", "I have knowledge in Ilustrator", "I have knowledge in HTML5", "I have knowledge in CSS3", "I have knowledge in Javascript", "I have knowledge in Jquery", "I have knowledge in Bootstrap", "I have knowledge in Angularjs", "I have knowledge in Responsive Design", "I have knowledge in SEO On Page", "I have knowledge in Wordpress", "I have knowledge in Json", "I have knowledge in SASS", "I have knowledge in Jade", "I have knowledge in Git", "I have knowledge in Gulp", "I have knowledge in Grunt", "I have knowledge in Photoshop", "I have knowledge in Ilustrator"],
             backspace:  function(){null},
-            callback: function() {$('.btn-more').show()},
             loop: true
             });
         }
@@ -188,3 +192,12 @@ appMG.controller('last-works', ['$scope', function($scope){
         });
     });
 }]);
+
+$(addJquery());
+function addJquery() {
+    $('.burger').on('click', function(){
+        $(this).toggleClass('open');
+        $('header').toggleClass('abierto');
+        $('body').toggleClass('abierto');
+    });
+}

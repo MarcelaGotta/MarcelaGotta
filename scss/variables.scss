@@ -1,0 +1,42 @@
+$fuente-principal: 'Open Sans', sans-serif;
+$fuente-secundaria: 'Raleway', sans-serif;
+/*Main Colors*/
+$color-alpha: #D4F7DC;
+$color-beta: #eee;
+$color-gamma:#95a5a6;
+$color-delta:#34495e;
+$color-epsilon:#2c3e50;
+$color-zeta:#98C1A1;;
+/* Change base color for each links*/
+$color-alpha-2: #DBC092;
+$color-zeta-2 : #ccb284;
+$color-alpha-3: #DBE7B4;
+$color-zeta-3 : #c5d19d; 
+$color-alpha-4: #E0846D;
+$color-zeta-4 : #d17058;
+$color-alpha-5: #e74c3c;
+$color-zeta-5 : #c0392b;
+// Variables
+$bg-body: #f9f9f9;
+
+$red: #ee4d4d;
+$blue: #2b2e48;
+$primary-color: $red;
+$secondary-color: $blue;
+
+
+// Typography
+$base-font: helvetica, arial, tahoma, verdana;
+$base-font-title: "Dosis", arial, tahoma, verdana;
+
+$base-font-color: #726f77;
+
+// Timeline
+$timeline-color: $primary-color;
+
+
+
+$shade-1:rgba(0,0,0,.05);
+
+$time-1: .4s;
+$time-2: ($time-1/1.54); 

@@ -1,12 +1,16 @@
 main(data-ng-controller="homeCrtl")
     div.container
         section.row
+            .col-xs-12
+                h1.titulo 
+                    span Marcela Gotta 
+                    | Front-End Developer
             div.col-xs-12
                 figure.image-me
-                    img(src="img/me-img.png")
+                    img(src="images/me-img.png")
                 .box-what-name
                     div.presentation
-                        p Hi, {{nombre}} I want to know more about you :)
+                        p Hi, I want to know more about you :)
                         p What is your name?
                     span
                     form.form-inline.form-send
@@ -15,11 +19,10 @@ main(data-ng-controller="homeCrtl")
                         button(type="button" class="btn btn-default btn-skip") Skip
                 .box-presentation
                     div.type-presentation
-                        p Muchas Gracias 
+                        p Thanks 
                             strong {{nombre}}
-                        p Me presento, soy Marcela Gotta.
-                        p Desarrolladora Front End, con altos conocimientos en
-                          br
-                          | HTML5, CSS3, Javascript, Angularjs, Wordpress.
-                    span.typed-present
+                        p I'm Marcela Gotta.
+                        p Front-End Developer since 2008
+                    .box-present
+                        span.typed-present
                     button(type="button" class="btn btn-success btn-more") ¿Quieres Saber más de mi?

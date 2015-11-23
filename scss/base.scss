@@ -1,8 +1,17 @@
 body {
     margin-left: 280px;
     font-size: 16px;
-    background: #FFFCF3;
+    font-family: $fuente-principal;
+    line-height: 1.8em;
 }
+
+.logo {
+    padding: 20px 40px 20px 20px;
+    img {
+        width: 100%;
+    }
+}
+
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 *{
 -webkit-font-smoothing:antialiased;
@@ -12,28 +21,62 @@ text-decoration:none;}
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
-/*Main Colors*/
-$color-alpha: #D4F7DC;
-$color-beta: #eee;
-$color-gamma:#95a5a6;
-$color-delta:#34495e;
-$color-epsilon:#2c3e50;
-$color-zeta:#98C1A1;;
-/* Change base color for each links*/
-$color-alpha-2: #DBC092;
-$color-zeta-2 : #ccb284;
-$color-alpha-3: #DBE7B4;
-$color-zeta-3 : #c5d19d; 
-$color-alpha-4: #E0846D;
-$color-zeta-4 : #d17058;
-$color-alpha-5: #e74c3c;
-$color-zeta-5 : #c0392b;
+.box-burger {
+    padding: 5px;
+}
+.burger {
+    width: 33px;
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+}
 
+.burger-brick {
+  height: 4px;
+  background: #FAE5ED;
+  margin-top: 6px;
+  -webkit-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  -ms-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
 
-$shade-1:rgba(0,0,0,.05);
+.open .burger-brick:first-child {
+  -webkit-transform: rotate(405deg);
+  -moz-transform: rotate(405deg);
+  -ms-transform: rotate(405deg);
+  -o-transform: rotate(405deg);
+  transform: rotate(405deg);
+  margin-top: 14px;
+}
 
-$time-1: .4s;
-$time-2: ($time-1/1.54); 
+.open .burger-brick:last-child {
+  -webkit-transform: rotate(-405deg);
+  -moz-transform: rotate(-405deg);
+  -ms-transform: rotate(-405deg);
+  -o-transform: rotate(-405deg);
+  transform: rotate(-405deg);
+  margin-top: -14px;
+}
+
+.open .middle {
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+}
+body.abierto {
+    margin-left: 86px;
+}
+header.abierto {
+     width: 86px;
+    overflow: hidden;
+    .logo {
+        padding: 10px 25px 10px 10px;
+    }
+}
 
 #list{
     width:280px;
@@ -54,6 +97,7 @@ $time-2: ($time-1/1.54);
 }
 .link a {
     color: #C76469;
+    padding: 0 !important;
     &:hover {
         color: #fff;
         text-decoration: none;
@@ -100,7 +144,6 @@ transform:rotate(-45deg);
   padding-top:0;
   margin:0;
   line-height:2.7;
-  color:$color-beta;
   font-family:helvetica;
   transition: $time-1 ease;
 }
@@ -172,7 +215,7 @@ transform:rotate(-45deg);
       }
 }
 
-.typed-cursor{
+#typed-cursor{
     opacity: 1;
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
@@ -194,7 +237,7 @@ transform:rotate(-45deg);
     100% { opacity:1; }
 }
 
-.box-presentation, .btn-more {
+.box-presentation {
     display: none ;
 }
 header {
@@ -205,21 +248,59 @@ header {
         box-shadow: inset -16px 0px 0px 0px rgb(154, 45, 51);
     left: 0;
     height: 100%;
+        -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+    -webkit-transition-property: left,opacity;
+    transition-property: left,opacity;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
 }
 .box-what-name {
     text-align: center;
 }
 .presentation {
-    font-family: 'Roboto Slab', serif;
+    font-family: $fuente-secundaria;
     font-weight: 700;
     font-size: 2em;
     text-align: center;
 }
 
 .box-presentation {
+    font-family: $fuente-secundaria;
+    font-weight: 700;
     .type-presentation {
-        font-family: 'Roboto Slab', serif;
         font-size: 1.5em;
         text-align: center;
+    }
+}
+
+.btn-more, .box-present {
+    display: block;
+    margin: auto;
+}
+
+.box-present {
+    width: 500px;
+    text-align: center;
+}
+
+.typed-present {
+    font-size: 2em;
+}
+.titulo {
+    span {
+        font-weight: 600;
+        display: block;
+        font-size: 50px;
+    }
+    text-align: center;
+    font-family: $fuente-secundaria;
+    font-weight: 300;
+    font-size: 45px;
+}
+.image-me {
+    text-align: center;
+    img {
+        width: 300px;
     }
 }

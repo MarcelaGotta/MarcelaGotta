@@ -1,22 +1,27 @@
 header
-    a(href="#")
+    .box-burger
+        .burger.open
+            .burger-brick
+            .burger-brick.middle
+            .burger-brick
+    a(href="#/")
         figure.logo
-            img(src="img/logo.png" alt="Marcela Gotta")
+            img(src="images/logo.png" alt="Marcela Gotta")
     nav.menu-principal
         ul#list.nav
             li.link.active
-                p
-                    a(href="/#/") Home
-                span.entypo-home
+                a(href="/#/")
+                    p Home
+                    span.entypo-home
             li.link
-                p
-                    a(href="/#/about") About Me
-                span.entypo-user
+                a(href="/#/about")
+                    p About Me
+                    span.entypo-user
             li.link
-                p
-                    a(href="/#/portfolio") My Portfolio
-                span.entypo-suitcase
+                a(href="/#/portfolio")
+                    p My Portfolio
+                    span.entypo-suitcase
             li.link
-                p
-                    a(href="/#/contact") Contact Me
-                span.entypo-mail
+                a(href="/#/contact")
+                    p Contact Me
+                    span.entypo-mail
