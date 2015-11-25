@@ -1,4 +1,4 @@
-var appMG = angular.module('appMG', ['ngRoute']);
+var appMG = angular.module('appMG', ['ngRoute', 'ngDialog']);
 appMG.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/', {
         templateUrl: 'home.html'
@@ -15,15 +15,7 @@ appMG.config(['$routeProvider', function($routeProvider){
     
 }]);
 appMG.controller('contactCrtl', ['$scope', '$rootScope', function($scope, $rootScope){
-    /*/Still need to add:
-    -form validation
-    -fix send button
-    -fix middle close
-    -open on one click?
-    -fix nudge after opening
-    -rework form color scheme
-*/
-// window.alert("sometext");
+        
        var C = $('#container-box'),
   	  		A = $('#open'),
   	  		L = $('#letter'),
@@ -141,7 +133,8 @@ appMG.controller('mainCrtl', ['$scope', function($scope){
     $scope.$on('$viewContentLoaded', addJquery);
     
 }]);
-appMG.controller('homeCrtl', ['$scope', function($scope){
+appMG.controller('homeCrtl', ['$scope', 'ngDialog', function($scope, ngDialog){
+    ngDialog.open({template: '<h1>hola</h1>', plain: true});
     function myPresentation() {
         $('.box-presentation').show();
         $('.box-what-name').hide();
@@ -198,6 +191,6 @@ function addJquery() {
     $('.burger').on('click', function(){
         $(this).toggleClass('open');
         $('header').toggleClass('abierto');
-        $('body').toggleClass('abierto');
+        $('body').toggleClass('cerrado');
     });
 }
