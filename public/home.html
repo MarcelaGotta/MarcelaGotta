@@ -7,27 +7,27 @@
       </div>
       <div class="col-xs-12">
         <figure class="image-me"><img src="images/me-img.png"/></figure>
-        <div class="box-what-name">
-          <div class="presentation">
-            <p>Hi, I want to know more about you :)</p>
-            <p>What is your name?</p>
-          </div><span></span>
-          <form class="form-inline form-send">
-            <input type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required="" class="form-control nombre"/>
-            <input type="submit" value="Send" class="btn btn-success btn-send"/>
-            <button type="button" class="btn btn-default btn-skip">Skip</button>
-          </form>
-        </div>
         <div class="box-presentation">
           <div class="type-presentation">
-            <p>Thanks <strong>{{nombre}}</strong></p>
-            <p>I'm Marcela Gotta.</p>
-            <p>Front-End Developer since 2008</p>
+            <p>Hi, <strong>{{nombre}}</strong>I'm Marcela Gotta. Front-End Developer since 2008</p><small>var iLove = ['Videogames', 'Books']</small>
           </div>
           <div class="box-present"><span class="typed-present"></span></div>
-          <button type="button" class="btn btn-success btn-more">¿Quieres Saber más de mi?</button>
+          <button type="button" class="btn btn-success btn-more">Want to know more about me? </button>
         </div>
       </div>
     </section>
   </div>
 </main>
+<script type="text/ng-template" id="content1">
+  <form role="form" class="form-inline form-send">
+    <div class="box-what-name">
+      <div class="presentation">
+        <p>For a better user experience</p>
+        <p>Please write your name, or some nickname to refer to you</p>
+      </div>
+    </div>
+    <input type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required="" class="form-control nombre"/>
+    <input type="submit" ng-click="confirm(1)" value="Send" class="btn btn-success btn-send"/>
+    <button type="button" ng-click="closeThisDialog('Some value')" class="btn btn-default btn-skip">Cancel</button>
+  </form>
+</script>

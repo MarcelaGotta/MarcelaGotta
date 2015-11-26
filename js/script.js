@@ -1,4 +1,4 @@
-var appMG = angular.module('appMG', ['ngRoute', 'ngDialog']);
+var appMG = angular.module('appMG', ['ngRoute', 'ui.bootstrap', 'ngDialog']);
 appMG.config(['$routeProvider', function($routeProvider){
     $routeProvider.when('/', {
         templateUrl: 'home.html'
@@ -11,9 +11,28 @@ appMG.config(['$routeProvider', function($routeProvider){
     }).otherwise({
         redirectTo: '/',
         templateUrl: '404.html'
+    });    
+}]);
+appMG.run(['$rootScope', function($rootScope){
+    $rootScope.modelClose = false;
+}]);
+appMG.controller('homeCrtl', ['$scope', 'ngDialog', '$rootScope', function($scope, ngDialog, $rootScope){
+    if($rootScope.modelClose == false) {
+        ngDialog.openConfirm({
+            template: 'content1',
+        });
+    };
+    $rootScope.$on('ngDialog.closed', function (e, $dialog) {
+        $rootScope.modelClose = true;
     });
+        $(".typed-present").typed({
+            strings: ["I have knowledge in HTML5", "I have knowledge in CSS3", "I have knowledge in Javascript", "I have knowledge in Jquery", "I have knowledge in Bootstrap", "I have knowledge in Angularjs", "I have knowledge in Responsive Design", "I have knowledge in SEO On Page", "I have knowledge in Wordpress", "I have knowledge in Json", "I have knowledge in SASS", "I have knowledge in Jade", "I have knowledge in Git", "I have knowledge in Gulp", "I have knowledge in Grunt", "I have knowledge in Photoshop", "I have knowledge in Ilustrator", "I have knowledge in HTML5", "I have knowledge in CSS3", "I have knowledge in Javascript", "I have knowledge in Jquery", "I have knowledge in Bootstrap", "I have knowledge in Angularjs", "I have knowledge in Responsive Design", "I have knowledge in SEO On Page", "I have knowledge in Wordpress", "I have knowledge in Json", "I have knowledge in SASS", "I have knowledge in Jade", "I have knowledge in Git", "I have knowledge in Gulp", "I have knowledge in Grunt", "I have knowledge in Photoshop", "I have knowledge in Ilustrator"],
+            backspace:  function(){null},
+            loop: true
+            });
     
 }]);
+
 appMG.controller('contactCrtl', ['$scope', '$rootScope', function($scope, $rootScope){
         
        var C = $('#container-box'),
@@ -133,30 +152,7 @@ appMG.controller('mainCrtl', ['$scope', function($scope){
     $scope.$on('$viewContentLoaded', addJquery);
     
 }]);
-appMG.controller('homeCrtl', ['$scope', 'ngDialog', function($scope, ngDialog){
-    ngDialog.open({template: '<h1>hola</h1>', plain: true});
-    function myPresentation() {
-        $('.box-presentation').show();
-        $('.box-what-name').hide();
-        $(this).hide();
-        $(".typed-present").typed({
-            strings: ["I have knowledge in HTML5", "I have knowledge in CSS3", "I have knowledge in Javascript", "I have knowledge in Jquery", "I have knowledge in Bootstrap", "I have knowledge in Angularjs", "I have knowledge in Responsive Design", "I have knowledge in SEO On Page", "I have knowledge in Wordpress", "I have knowledge in Json", "I have knowledge in SASS", "I have knowledge in Jade", "I have knowledge in Git", "I have knowledge in Gulp", "I have knowledge in Grunt", "I have knowledge in Photoshop", "I have knowledge in Ilustrator", "I have knowledge in HTML5", "I have knowledge in CSS3", "I have knowledge in Javascript", "I have knowledge in Jquery", "I have knowledge in Bootstrap", "I have knowledge in Angularjs", "I have knowledge in Responsive Design", "I have knowledge in SEO On Page", "I have knowledge in Wordpress", "I have knowledge in Json", "I have knowledge in SASS", "I have knowledge in Jade", "I have knowledge in Git", "I have knowledge in Gulp", "I have knowledge in Grunt", "I have knowledge in Photoshop", "I have knowledge in Ilustrator"],
-            backspace:  function(){null},
-            loop: true
-            });
-        }
 
-    $('.btn-send').on('click', function(){
-        if($('.nombre').val().length !== 0) {
-            return myPresentation();
-        }
-    });
-    $('.btn-skip').on('click', function(){
-        return myPresentation();
-    });
-    
-    
-}]);
 appMG.controller('last-works', ['$scope', function($scope){
     $(function(){
         $("#galeria-works").elastic_grid({

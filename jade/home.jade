@@ -8,21 +8,22 @@ main(data-ng-controller="homeCrtl")
             div.col-xs-12
                 figure.image-me
                     img(src="images/me-img.png")
-                .box-what-name
-                    div.presentation
-                        p Hi, I want to know more about you :)
-                        p What is your name?
-                    span
-                    form.form-inline.form-send
-                        input(type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required='').form-control.nombre
-                        input(type="submit" class="btn btn-success btn-send" value="Send") 
-                        button(type="button" class="btn btn-default btn-skip") Skip
+                
                 .box-presentation
                     div.type-presentation
-                        p Thanks 
+                        p Hi, 
                             strong {{nombre}}
-                        p I'm Marcela Gotta.
-                        p Front-End Developer since 2008
+                            | I'm Marcela Gotta. Front-End Developer since 2008
+                        small var iLove = ['Videogames', 'Books']
                     .box-present
                         span.typed-present
-                    button(type="button" class="btn btn-success btn-more") ¿Quieres Saber más de mi?
+                    button(type="button" class="btn btn-success btn-more") Want to know more about me? 
+script(type="text/ng-template" id="content1")
+  form(role='form').form-inline.form-send
+        .box-what-name
+            div.presentation
+                p For a better user experience
+                p Please write your name, or some nickname to refer to you
+        input(type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required='').form-control.nombre
+        input(type="submit" class="btn btn-success btn-send" ng-click="confirm(1)" value="Send") 
+        button(type="button" class="btn btn-default btn-skip" ng-click="closeThisDialog('Some value')") Cancel
