@@ -5,7 +5,7 @@ html(lang="en" data-ng-app="appMG")
         title Front-End Developer - Marcela Gotta
         link(type="text/css" rel="stylesheet" href="css/general.min.css")
         link(type="text/css" rel="stylesheet" href="css/styles.min.css")
-    body(data-ng-controller="mainCrtl")
+    body(data-ng-controller="mainCrtl" ng-class="{'cerrado': isActive}")
         ng-include( src=" 'inc/header.html' ")
         div(ng-view='')
         ng-include( src=" 'inc/footer.html' ")    

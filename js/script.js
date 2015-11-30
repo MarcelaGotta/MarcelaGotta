@@ -15,6 +15,7 @@ appMG.config(['$routeProvider', function($routeProvider){
 }]);
 appMG.run(['$rootScope', function($rootScope){
     $rootScope.modelClose = false;
+    
 }]);
 appMG.controller('homeCrtl', ['$scope', 'ngDialog', '$rootScope', function($scope, ngDialog, $rootScope){
     if($rootScope.modelClose == false) {
@@ -26,7 +27,7 @@ appMG.controller('homeCrtl', ['$scope', 'ngDialog', '$rootScope', function($scop
         $rootScope.modelClose = true;
     });
         $(".typed-present").typed({
-            strings: ["I have knowledge in HTML5", "I have knowledge in CSS3", "I have knowledge in Javascript", "I have knowledge in Jquery", "I have knowledge in Bootstrap", "I have knowledge in Angularjs", "I have knowledge in Responsive Design", "I have knowledge in SEO On Page", "I have knowledge in Wordpress", "I have knowledge in Json", "I have knowledge in SASS", "I have knowledge in Jade", "I have knowledge in Git", "I have knowledge in Gulp", "I have knowledge in Grunt", "I have knowledge in Photoshop", "I have knowledge in Ilustrator", "I have knowledge in HTML5", "I have knowledge in CSS3", "I have knowledge in Javascript", "I have knowledge in Jquery", "I have knowledge in Bootstrap", "I have knowledge in Angularjs", "I have knowledge in Responsive Design", "I have knowledge in SEO On Page", "I have knowledge in Wordpress", "I have knowledge in Json", "I have knowledge in SASS", "I have knowledge in Jade", "I have knowledge in Git", "I have knowledge in Gulp", "I have knowledge in Grunt", "I have knowledge in Photoshop", "I have knowledge in Ilustrator"],
+            strings: ["Front-End Developer", "Front-End in HTML5", "Front-End in CSS3", "Front-End in Javascript", "Front-End in Jquery", "Front-End in Bootstrap", "Front-End in Angularjs", "Front-End in Responsive Design", "Front-End in SEO On Page", "Front-End in Wordpress", "Front-End in Json", "Front-End in SASS", "Front-End in Jade", "Front-End in Git", "Front-End in Gulp", "Front-End in Grunt", "Front-End in Photoshop", "Front-End in Illustrator", "Front-End in HTML5", "Front-End in CSS3", "Front-End in Javascript", "Front-End in Jquery", "Front-End in Bootstrap", "Front-End in Angularjs", "Front-End in Responsive Design", "Front-End in SEO On Page", "Front-End in Wordpress", "Front-End in Json", "Front-End in SASS", "Front-End in Jade", "Front-End in Git", "Front-End in Gulp", "Front-End in Grunt", "Front-End in Photoshop", "Front-End in Illustrator" ],
             backspace:  function(){null},
             loop: true
             });
@@ -149,8 +150,12 @@ $(function() {
 
 }]);
 appMG.controller('mainCrtl', ['$scope', function($scope){
-    $scope.$on('$viewContentLoaded', addJquery);
-    
+        $scope.isActive = false;
+        $scope.isOpen = true;
+          $scope.activeButton = function() {
+            $scope.isActive = !$scope.isActive;
+            $scope.isOpen = !$scope.isOpen;
+          }  
 }]);
 
 appMG.controller('last-works', ['$scope', function($scope){
@@ -181,12 +186,3 @@ appMG.controller('last-works', ['$scope', function($scope){
         });
     });
 }]);
-
-$(addJquery());
-function addJquery() {
-    $('.burger').on('click', function(){
-        $(this).toggleClass('open');
-        $('header').toggleClass('abierto');
-        $('body').toggleClass('cerrado');
-    });
-}

@@ -1,33 +1,44 @@
 
-<main data-ng-controller="homeCrtl">
+<main data-ng-controller="homeCrtl" class="home">
   <div class="container">
     <section class="row">
       <div class="col-xs-12">
-        <h1 class="titulo"> <span>Marcela Gotta </span>Front-End Developer</h1>
+        <h1 class="titulo"> <strong>Marcela Gotta </strong><span class="typed-present"></span></h1>
       </div>
-      <div class="col-xs-12">
-        <figure class="image-me"><img src="images/me-img.png"/></figure>
+    </section>
+    <section class="row">
+      <div class="col-xs-12 col-md-4">
+        <figure class="image-me"><img src="images/me-img.png" class="img-responsive"/></figure>
+      </div>
+      <div class="col-xs-12 col-md-8">
         <div class="box-presentation">
-          <div class="type-presentation">
-            <p>Hi, <strong>{{nombre}}</strong>I'm Marcela Gotta. Front-End Developer since 2008</p><small>var iLove = ['Videogames', 'Books']</small>
+          <div class="code-header"></div>
+          <div class="circles">
+            <div class="red"></div>
+            <div class="yellow"></div>
+            <div class="green"></div>
           </div>
-          <div class="box-present"><span class="typed-present"></span></div>
-          <button type="button" class="btn btn-success btn-more">Want to know more about me? </button>
+          <div class="type-presentation">
+            <div class="triangle"></div>
+            <p> <span class="var">var </span><span class="variable">welcome </span><span class="equal">= </span><span class="string">"Hi, <strong>{{nombre}}</strong> I'm freelance front-end developer, with 7+ year of professional experience working in various web related roles. I currently live in Madrid".</span></p>
+          </div><small class="ilove">
+            <p> </p><span class="var">var </span>iLove <span class="equal">= </span>[<span class="string">'Front-End Development', 'Videogames', 'Books'</span>]</small>
         </div>
       </div>
+      <div class="col-xs-12"><a href="#/about" type="button" class="btn btn-success btn-more">Want to know more about me? </a></div>
     </section>
   </div>
 </main>
 <script type="text/ng-template" id="content1">
-  <form role="form" class="form-inline form-send">
-    <div class="box-what-name">
-      <div class="presentation">
-        <p>For a better user experience</p>
-        <p>Please write your name, or some nickname to refer to you</p>
-      </div>
+  <form role="form" class="form-name form-inline form-send">
+    <div class="presentation">
+      <h4>Note</h4>
+      <p>For a better user experience Please write your name, or some nickname to refer to you</p>
     </div>
-    <input type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required="" class="form-control nombre"/>
-    <input type="submit" ng-click="confirm(1)" value="Send" class="btn btn-success btn-send"/>
-    <button type="button" ng-click="closeThisDialog('Some value')" class="btn btn-default btn-skip">Cancel</button>
+    <div class="box-what-name">
+      <input type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required="" class="form-control nombre"/>
+      <input type="submit" ng-click="confirm(1)" value="Send" class="btn btn-success btn-send"/>
+      <button type="button" ng-click="closeThisDialog('Some value')" class="btn btn-default btn-skip">Cancel</button>
+    </div>
   </form>
 </script>

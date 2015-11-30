@@ -1,6 +1,6 @@
-header
-    .box-burger
-        .burger.open
+header(ng-class="{'abierto': isActive}")
+    .box-burger( ng-click="activeButton()")
+        .burger.open(ng-class="{'open': isOpen}")
             .burger-brick
             .burger-brick.middle
             .burger-brick

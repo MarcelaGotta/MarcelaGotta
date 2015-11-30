@@ -1,7 +1,7 @@
 
-<header>
-  <div class="box-burger">
-    <div class="burger open">
+<header ng-class="{'abierto': isActive}">
+  <div ng-click="activeButton()" class="box-burger">
+    <div ng-class="{'open': isOpen}" class="burger open">
       <div class="burger-brick"></div>
       <div class="burger-brick middle"></div>
       <div class="burger-brick"></div>

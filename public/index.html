@@ -6,7 +6,7 @@
     <link type="text/css" rel="stylesheet" href="css/general.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/styles.min.css"/>
   </head>
-  <body data-ng-controller="mainCrtl">
+  <body data-ng-controller="mainCrtl" ng-class="{'cerrado': isActive}">
     <ng-include src=" 'inc/header.html' "></ng-include>
     <div ng-view=""></div>
     <ng-include src=" 'inc/footer.html' ">   </ng-include>

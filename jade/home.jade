@@ -1,29 +1,50 @@
-main(data-ng-controller="homeCrtl")
+main.home(data-ng-controller="homeCrtl")
     div.container
         section.row
             .col-xs-12
                 h1.titulo 
-                    span Marcela Gotta 
-                    | Front-End Developer
-            div.col-xs-12
+                    strong Marcela Gotta 
+                    span.typed-present
+        section.row
+            div.col-xs-12.col-md-4
                 figure.image-me
-                    img(src="images/me-img.png")
-                
+                    img(src="images/me-img.png").img-responsive
+            .col-xs-12.col-md-8
                 .box-presentation
+                    .code-header
+                    .circles
+                        .red
+                        .yellow
+                        .green
                     div.type-presentation
-                        p Hi, 
-                            strong {{nombre}}
-                            | I'm Marcela Gotta. Front-End Developer since 2008
-                        small var iLove = ['Videogames', 'Books']
-                    .box-present
-                        span.typed-present
-                    button(type="button" class="btn btn-success btn-more") Want to know more about me? 
+                        .triangle
+                        p 
+                            span.var var 
+                            span.variable welcome 
+                            span.equal = 
+                            span.string "Hi, 
+                                strong {{nombre}}
+                                |  I'm freelance front-end developer, with 7+ year of professional experience working in various web related roles. I currently live in Madrid".
+                    small.ilove
+                        p 
+                        span.var var 
+                        | iLove 
+                        span.equal = 
+                        | [
+                        span.string 'Front-End Development', 'Videogames', 'Books'
+                        | ]
+            .col-xs-12
+                a(href="#/about" type="button" class="btn btn-success btn-more") Want to know more about me? 
 script(type="text/ng-template" id="content1")
-  form(role='form').form-inline.form-send
+
+
+
+
+    form(role='form').form-name.form-inline.form-send
+        .presentation
+            h4 Note
+            p For a better user experience Please write your name, or some nickname to refer to you
         .box-what-name
-            div.presentation
-                p For a better user experience
-                p Please write your name, or some nickname to refer to you
-        input(type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required='').form-control.nombre
-        input(type="submit" class="btn btn-success btn-send" ng-click="confirm(1)" value="Send") 
-        button(type="button" class="btn btn-default btn-skip" ng-click="closeThisDialog('Some value')") Cancel
+            input(type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required='').form-control.nombre
+            input(type="submit" class="btn btn-success btn-send" ng-click="confirm(1)" value="Send") 
+            button(type="button" class="btn btn-default btn-skip" ng-click="closeThisDialog('Some value')") Cancel

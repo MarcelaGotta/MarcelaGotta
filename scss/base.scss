@@ -1,12 +1,20 @@
+html {
+    background-color: #F5F5F5;
+}
 body {
     margin-left: 280px;
     font-size: 16px;
     font-family: $fuente-principal;
     line-height: 1.8em;
+    background-color: #F5F5F5;
+}
+
+h1, h2, h3 {
+    font-family: $fuente-secundaria;
 }
 
 .logo {
-    padding: 20px 40px 20px 20px;
+    padding: 15px 50px 30px 30px;
     img {
         width: 100%;
     }
@@ -22,13 +30,14 @@ text-decoration:none;}
   font-family: 'entypo', sans-serif;
 }
 .box-burger {
-    padding: 5px;
+    padding: 20px;
 }
 .burger {
     width: 33px;
     cursor: pointer;
     position: absolute;
     right: 25px;
+    top: 10px;
 }
 
 .burger-brick {
@@ -82,6 +91,11 @@ header.abierto {
     .logo {
         padding: 10px 25px 10px 10px;
     }
+    .link {
+        span {
+              box-shadow:.5em 0px  #9A2D33,inset 0 1px 0 $shade-1;
+        }
+    }
 }
 
 #list{
@@ -102,8 +116,9 @@ header.abierto {
     transition:box-shadow $time-1 ease,padding $time-2 ease;
 }
 .link a {
-    color: #C76469;
+    color: #FAE5ED;
     padding: 0 !important;
+    
     &:hover {
         color: #fff;
         text-decoration: none;
@@ -116,41 +131,27 @@ header.abierto {
   display:block;
   width:70px;
   height:60px;
-  background:#C76469;
   float:left;
   font-size:2.5em;
   line-height:1.5em;
   margin:-1.48em auto;  
   text-align:center;
-  color:#9A2D33;
+  color:#FAE5ED;
   position:relative;
   z-index:2;
-  box-shadow:.5em 0px  #9A2D33,inset 0 1px 0 $shade-1;
   transform:rotate(0deg);
   transition:z-index 0s ease $time-2;
-}
-.link p:before{
-  content:'';
-  position:absolute;
-  z-index:1;
-  display:block;
-  width:20px;
-  height:20px;
-  margin:1em -1.7em;
- background:$color-epsilon;
-transform:rotate(-45deg);
-  opacity:0;
 }
 .link p{
   font-size:1.4em;
   width:168px; 
   display:block;
   float:left;
-  padding-left:5em;
+  padding-left:3.5em;
   padding-top:0;
   margin:0;
   line-height:2.7;
-  font-family:helvetica;
+  font-weight:300;
   transition: $time-1 ease;
 }
 
@@ -159,8 +160,6 @@ transform:rotate(-45deg);
   box-shadow:1em 0px  $color-alpha,inset 0 1px 0 $shade-1;
   padding-right:1em;
   span{
-    color:$color-zeta;
-   box-shadow:.5em 0px $color-alpha;
     z-index:0;
   }
   p{
@@ -179,46 +178,21 @@ transform:rotate(-45deg);
 .link:nth-child(2):hover{
  background:$color-zeta-2;
   box-shadow:1em 0px  $color-alpha-2,inset 0 1px 0 $shade-1;
-  span{
-    color:$color-zeta-2;
-   box-shadow:.5em 0px $color-alpha-2;
-  }
-  p:before{
-      background:$color-alpha-2;
-      }
+
 }
 .link:nth-child(3):hover{
  background:$color-zeta-3;
   box-shadow:1em 0px  $color-alpha-3,inset 0 1px 0 $shade-1;
-  span{
-    color:$color-zeta-3;
-   box-shadow:.5em 0px $color-alpha-3;
-  }
-  p:before{
-      background:$color-alpha-3;
-      }
+
 }
 .link:nth-child(4):hover{
  background:$color-zeta-4;
   box-shadow:1em 0px  $color-alpha-4,inset 0 1px 0 $shade-1;
-  span{
-    color:$color-zeta-4;
-   box-shadow:.5em 0px $color-alpha-4;
-  }
-  p:before{
-      background:$color-alpha-4;
-      }
+
 }
 .link:nth-child(5):hover{
  background:$color-zeta-5;
   box-shadow:1em 0px  $color-alpha-5,inset 0 1px 0 $shade-1;
-  span{
-    color:$color-zeta-5;
-   box-shadow:.5em 0px $color-alpha-5;
-  }
-  p:before{
-      background:$color-alpha-5;
-      }
 }
 
 #typed-cursor{
@@ -259,40 +233,100 @@ header {
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
 }
+.form-name {
+    position: relative;
+}
 .box-what-name {
     text-align: center;
+    padding: 15px;
+    
 }
 .presentation {
-    font-family: $fuente-secundaria;
-    font-weight: 700;
-    font-size: 2em;
-    text-align: center;
-}
-
-.box-presentation {
-    font-family: $fuente-secundaria;
-    font-weight: 700;
-    .type-presentation {
-        font-size: 1.5em;
-        text-align: center;
+    font-family: $fuente-principal;
+    font-weight: 300;
+    line-height: 1.4em;
+    font-size: 1.4em;
+    h4 {
+        font-family: $fuente-principal;
+        font-size: 1.2em;
     }
 }
 
 .btn-more, .box-present {
     display: block;
-    margin: auto;
+    margin: 40px auto;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background: #9A2D33;
+    border-radius: 30px;
+    border: 0;
+    font-weight: 300;
+    font-family: $fuente-principal;
+    width: 330px;
 }
 
 .box-present {
     width: 500px;
     text-align: center;
 }
-
+.box-presentation {
+    font-family: 'Inconsolata' ;
+    font-size: 1.4em;
+    padding: 60px 40px 40px 40px;
+    line-height: 35px;
+    background-color: #2d2d2d;
+    color: #fff;
+    border-radius: 4px;
+    position: relative;
+    small {
+        font-size: 80%;
+    }
+    .circles {
+        position: absolute;
+        top: 3px;
+        left: 15px;
+        > * {
+            display:inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+        }
+        .red {
+            background-color: #e26b63;
+        }
+        .yellow {
+            background-color: #dfdd64;
+        }
+        .green{
+            background-color: #72c75f;
+        }
+    }
+    .var {
+        color: #66d9ef;
+        font-style: italic;
+    }
+    .equal {
+        color: #f92672;
+    }
+    .string {
+        color: #e6db74;
+    }
+    .code-header {
+        height: 40px;
+        width: 100%;
+        background-color: #424242;
+        position: absolute;
+        top:0;
+        left: 0;
+        border-radius: 4px 4px 0px 0px
+    }
+}
 .typed-present {
     font-size: 2em;
 }
 .titulo {
-    span {
+    margin-bottom: 40px;
+    strong {
         font-weight: 600;
         display: block;
         font-size: 50px;
@@ -300,11 +334,45 @@ header {
     text-align: center;
     font-family: $fuente-secundaria;
     font-weight: 300;
-    font-size: 45px;
+    font-size: 25px;
 }
 .image-me {
     text-align: center;
     img {
-        width: 230px;
+        margin: auto;
+    }
+}
+.cabecera-titulo {
+    height: 200px;
+    background-size: cover;
+    margin-bottom: 30px;
+    .box-titulo {
+        position: relative;
+        height: 200px;
+    }
+    h1 {
+        margin-top: 0;
+        position: absolute;
+        bottom: 0;
+        color: #fff;
+        font-weight: 700;
+        font-size: 3.2em;
+    }
+}
+.about {
+    .cabecera-titulo {
+        background-image: url(../images/back-about.jpg);
+    }
+}
+
+.portfolio {
+    .cabecera-titulo {
+        background-image: url(../images/back-portfolio.jpg)
+    }
+}
+
+.contact-me {
+    .cabecera-titulo {
+        background-image: url(../images/back-contact.jpg)
     }
 }
