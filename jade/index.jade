@@ -7,7 +7,7 @@ html(lang="en" data-ng-app="appMG")
         link(type="text/css" rel="stylesheet" href="css/styles.min.css")
     body(data-ng-controller="mainCrtl" ng-class="{'cerrado': isActive}")
         ng-include( src=" 'inc/header.html' ")
-        div(ng-view='')
+        div.prueba(ng-view='')
         ng-include( src=" 'inc/footer.html' ")    
     script(src="/js/scripts.min.js")
     

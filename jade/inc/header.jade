@@ -1,6 +1,6 @@
 header(ng-class="{'abierto': isActive}")
     .box-burger( ng-click="activeButton()")
-        .burger.open(ng-class="{'open': isOpen}")
+        .burger(ng-class="{'open': isOpen}")
             .burger-brick
             .burger-brick.middle
             .burger-brick
@@ -25,3 +25,7 @@ header(ng-class="{'abierto': isActive}")
                 a(href="/#/contact")
                     p Contact Me
                     span.entypo-mail
+            li.link
+                a(href="/#/website")
+                    p This Website
+                    span.entypo-code

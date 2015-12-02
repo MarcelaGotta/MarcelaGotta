@@ -6,10 +6,10 @@ main.home(data-ng-controller="homeCrtl")
                     strong Marcela Gotta 
                     span.typed-present
         section.row
-            div.col-xs-12.col-md-4
+            //.col-xs-12
                 figure.image-me
                     img(src="images/me-img.png").img-responsive
-            .col-xs-12.col-md-8
+            .col-xs-12
                 .box-presentation
                     .code-header
                     .circles
@@ -33,9 +33,12 @@ main.home(data-ng-controller="homeCrtl")
                         | [
                         span.string 'Front-End Development', 'Videogames', 'Books'
                         | ]
-            .col-xs-12
-                a(href="#/about" type="button" class="btn btn-success btn-more") Want to know more about me? 
+            
+            .col-xs-12.buttons
+                a(href="#/about" type="button" class="btn btn-success btn-more") About me
+                a(href="#/portfolio" type="button" class="btn btn-success btn-more") My portfolio
 script(type="text/ng-template" id="content1")
+                
 
 
 

@@ -1,23 +1,21 @@
 html {
     background-color: #F5F5F5;
+    min-height: 100%;
 }
 body {
-    margin-left: 280px;
+    margin-left: 86px;
     font-size: 16px;
     font-family: $fuente-principal;
     line-height: 1.8em;
-    background-color: #F5F5F5;
+    
 }
 
 h1, h2, h3 {
     font-family: $fuente-secundaria;
 }
 
-.logo {
-    padding: 15px 50px 30px 30px;
-    img {
-        width: 100%;
-    }
+.prueba {
+    height: 100%;
 }
 
 @import url(http://weloveiconfonts.com/api/?family=entypo);
@@ -29,14 +27,20 @@ text-decoration:none;}
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
 }
+
+.home {
+    background-image: url(../images/fondo-banner1.jpg);
+    background-size: cover;
+    min-height: 100%;
+}
 .box-burger {
-    padding: 20px;
+    padding: 25px;
 }
 .burger {
     width: 33px;
     cursor: pointer;
     position: absolute;
-    right: 25px;
+    right: 35px;
     top: 10px;
 }
 
@@ -77,7 +81,7 @@ text-decoration:none;}
   transform: scale(0);
 }
 body.cerrado {
-    margin-left: 86px;
+    margin-left: 280px;
     .box-burger {
         padding-bottom: 35px;
     }
@@ -85,18 +89,7 @@ body.cerrado {
         right: 35px;
     }
 }
-header.abierto {
-     width: 86px;
-    overflow: hidden;
-    .logo {
-        padding: 10px 25px 10px 10px;
-    }
-    .link {
-        span {
-              box-shadow:.5em 0px  #9A2D33,inset 0 1px 0 $shade-1;
-        }
-    }
-}
+
 
 #list{
     width:280px;
@@ -107,16 +100,16 @@ header.abierto {
 }
 .link{
     box-sizing: content-box;
-    background:#AC4147;
+    background:#428CA9;
     width:264px;
     height:60px;
-    box-shadow:1em 0px  #9A2D33,inset 0 1px 0 $shade-1;
+    box-shadow:1em 0px  #2D689A,inset 0 1px 0 $shade-1;
     cursor:pointer;
     display:block ;
     transition:box-shadow $time-1 ease,padding $time-2 ease;
 }
 .link a {
-    color: #FAE5ED;
+    color: #E5EAFA;
     padding: 0 !important;
     
     &:hover {
@@ -136,7 +129,7 @@ header.abierto {
   line-height:1.5em;
   margin:-1.48em auto;  
   text-align:center;
-  color:#FAE5ED;
+  color:#E5EAFA;
   position:relative;
   z-index:2;
   transform:rotate(0deg);
@@ -219,11 +212,13 @@ header.abierto {
 
 
 header {
-    width: 280px;
+    width: 86px;
     position: fixed;
+    overflow: hidden;
+
     z-index: 999;
-    background-color: #AC4147;
-        box-shadow: inset -16px 0px 0px 0px rgb(154, 45, 51);
+    background-color: #428CA9;
+        box-shadow: inset -16px 0px 0px 0px #2D689A;
     left: 0;
     height: 100%;
         -webkit-transition-delay: .2s;
@@ -232,6 +227,31 @@ header {
     transition-property: left,opacity;
     -webkit-transition-duration: .4s;
     transition-duration: .4s;
+    .link {
+        span {
+              box-shadow:.5em 0px  #2D689A,inset 0 1px 0 $shade-1;
+        }
+    }
+}
+header.abierto {
+     width: 280px;
+    overflow: visible;
+    .logo {
+        
+        padding: 15px 50px 30px 30px;
+    }
+    .link {
+        span {
+              box-shadow:none;
+        }
+    }
+    
+}
+.logo {
+    padding: 10px 25px 10px 10px;
+    img {
+        width: 100%;
+    }
 }
 .form-name {
     position: relative;
@@ -254,15 +274,19 @@ header {
 
 .btn-more, .box-present {
     display: block;
-    margin: 40px auto;
+    margin: 40px 10px;
     font-size: 1.2em;
     padding: 10px 20px;
-    background: #9A2D33;
+    border: 2px solid #2D689A;
     border-radius: 30px;
-    border: 0;
+    background: rgba(0, 0, 0, 0.49);
     font-weight: 300;
     font-family: $fuente-principal;
-    width: 330px;
+}
+
+.btn-more:hover {
+    background-color: #2D689A;
+    border: 2px solid #2D689A;
 }
 
 .box-present {
@@ -278,6 +302,8 @@ header {
     color: #fff;
     border-radius: 4px;
     position: relative;
+    max-width: 600px;
+    margin: auto;
     small {
         font-size: 80%;
     }
@@ -326,6 +352,7 @@ header {
 }
 .titulo {
     margin-bottom: 40px;
+    color: #fff;
     strong {
         font-weight: 600;
         display: block;
@@ -364,7 +391,12 @@ header {
         background-image: url(../images/back-about.jpg);
     }
 }
-
+.buttons {
+    text-align: center;
+}
+.buttons a {
+    display: inline-block;
+}
 .portfolio {
     .cabecera-titulo {
         background-image: url(../images/back-portfolio.jpg)

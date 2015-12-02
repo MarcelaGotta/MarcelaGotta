@@ -17,7 +17,7 @@
 }
 
 @media (max-width: 1199px) {
-    body {
+    body.cerrado {
         margin-left: 86px;
     }
     header {
@@ -27,7 +27,7 @@
             padding: 10px 25px 10px 10px;
         }
         .link span {
-              box-shadow:.5em 0px  #9A2D33,inset 0 1px 0 $shade-1;
+              box-shadow:.5em 0px  #2D689A,inset 0 1px 0 $shade-1;
         }
         &.abierto {
             width: 280px;
@@ -39,11 +39,5 @@
                   box-shadow: none;
             }
         }
-    }
-    .box-burger {
-        padding-bottom: 35px;
-    }
-    .burger {
-        right: 35px;
     }
 }
