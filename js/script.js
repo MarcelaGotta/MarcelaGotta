@@ -33,11 +33,22 @@ appMG.controller('homeCrtl', ['$scope', 'ngDialog', '$rootScope', function($scop
             backspace:  function(){null},
             loop: true
             });
+    $(function(){
+        var fullHeight = $(document).height();
+        $('body').css('min-height', fullHeight);
+    });
     
 }]);
 
 appMG.controller('contactCrtl', ['$scope', '$rootScope', function($scope, $rootScope){
     
+}]);
+appMG.controller('aboutCrtl', ['$scope', '$rootScope', function($scope, $rootScope){
+    jQuery('.skillbar').each(function(){
+        jQuery(this).find('.skillbar-bar').animate({
+            width:jQuery(this).attr('data-percent')
+        },2000);
+    });
 }]);
 appMG.controller('mainCrtl', ['$scope', function($scope){
         $scope.isActive = false;
@@ -46,10 +57,7 @@ appMG.controller('mainCrtl', ['$scope', function($scope){
             $scope.isActive = !$scope.isActive;
             $scope.isOpen = !$scope.isOpen;
           };
-        $(function(){
-        var fullHeight = $(document).height();
-        $('body').css('height', fullHeight);
-            });
+        
 }]);
 
 appMG.controller('last-works', ['$scope', function($scope){
