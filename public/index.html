@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8"/>
     <title>Front-End Developer - Marcela Gotta</title>
+    <meta name="description" content="I'm a front-end developer specializing HTML5, CSS3 and Javascript. I have experience in developing web sites fully adaptable to any device (responsive) based on W3C standards."/>
+    <meta name="keywords" content="front-end developer, html, css, angularjs developer, html5 developer"/>
+    <meta name="author" content="Marcela Gotta"/>
     <link type="text/css" rel="stylesheet" href="css/general.min.css"/>
     <link type="text/css" rel="stylesheet" href="css/styles.min.css"/>
   </head>
   <body data-ng-controller="mainCrtl" ng-class="{'cerrado': isActive}">
     <ng-include src=" 'inc/header.html' "></ng-include>
-    <div ng-view="" class="prueba"></div>
+    <div ng-view=""></div>
     <ng-include src=" 'inc/footer.html' ">   </ng-include>
   </body>
   <script src="/js/scripts.min.js"></script>

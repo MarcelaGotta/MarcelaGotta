@@ -3,11 +3,14 @@ html(lang="en" data-ng-app="appMG")
     head
         meta(charset="UTF-8")
         title Front-End Developer - Marcela Gotta
+        meta(name="description" content="I'm a front-end developer specializing HTML5, CSS3 and Javascript. I have experience in developing web sites fully adaptable to any device (responsive) based on W3C standards.")
+        meta(name="keywords" content="front-end developer, html, css, angularjs developer, html5 developer")
+        meta(name="author" content="Marcela Gotta")
         link(type="text/css" rel="stylesheet" href="css/general.min.css")
         link(type="text/css" rel="stylesheet" href="css/styles.min.css")
     body(data-ng-controller="mainCrtl" ng-class="{'cerrado': isActive}")
         ng-include( src=" 'inc/header.html' ")
-        div.prueba(ng-view='')
+        div(ng-view='')
         ng-include( src=" 'inc/footer.html' ")    
     script(src="/js/scripts.min.js")
     

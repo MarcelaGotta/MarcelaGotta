@@ -4,3 +4,38 @@
             .row
                 .col-xs-12.box-titulo
                     h1 Contact Me
+            .row
+                .col-xs-12.col-sm-6
+                    h2 Contact Information
+                    ul.ul-information
+                        li
+                            span.glyphicon.glyphicon-envelope
+                            | hola@marcelagotta.com
+                        li
+                            span.glyphicon.glyphicon-phone-alt
+                            | +34 684 141 301
+                .col-xs-12.col-sm-6
+                    h2 Contact Form
+                    #contact_form
+                      .wrap
+                        .form
+                          .success
+                            | Thanks! 
+                            br
+                            | Your message has been send!
+                            br
+                          p.description {{nombre}} If you have any questions you can send me a message and I will answer soon
+                          p.status
+                          form.clearfix(method='post')
+                            .row
+                              label Name
+                              input.input(type='text', name='name', placeholder='Write your name' value="{{nombre}}")
+                            .row
+                              label Email
+                              input(type='text', name='email', placeholder='Write your email')
+                            .row
+                              label Message
+                              textarea(name='message', placeholder='Your message here')
+                            .row
+                              input.transition.submit(type='submit', value='Send')
+                      .clear

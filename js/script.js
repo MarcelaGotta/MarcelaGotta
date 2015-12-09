@@ -41,7 +41,42 @@ appMG.controller('homeCrtl', ['$scope', 'ngDialog', '$rootScope', function($scop
 }]);
 
 appMG.controller('contactCrtl', ['$scope', '$rootScope', function($scope, $rootScope){
-    
+    $(function(){
+        $("#contact_form .wrap > span.close").click(function() {
+            $(".writeus .toggle-button").click();
+        });
+
+        $("#contact_form .wrap .form .success > span.close").click(function() {
+            $("#contact_form form")[0].reset();
+            $("#contact_form .success").fadeOut();
+        });
+        $("#contact_form form").submit(function (event) {
+            event.preventDefault();
+            var form = $(this);
+            var postData = form.serialize();
+            var status = form.parent().find(".status");
+            var success = form.parent().find(".success");
+            success.removeClass('shake')
+            $.ajax({
+                type: "POST",
+                url: "contact.php",
+                data: postData,
+                success: function(data) {
+                    if (data == "success") {
+                        status.html("").hide();
+                        success.fadeIn();
+                    } else if (data == "invalid") {
+                        status.toggleClass('shake').html("This email is invalid.").slideDown();
+                    } else {
+                        status.toggleClass('shake').html("Oups, something went wrong!").slideDown();	
+                    }
+                },
+                error: function () {
+                    status.toggleClass('shake').html("Oups, something went wrong!").slideDown();
+                }
+            });
+        });
+    });
 }]);
 appMG.controller('aboutCrtl', ['$scope', '$rootScope', function($scope, $rootScope){
     jQuery('.skillbar').each(function(){
@@ -62,6 +97,7 @@ appMG.controller('mainCrtl', ['$scope', function($scope){
 
 appMG.controller('last-works', ['$scope', function($scope){
     $(function(){
+        
         $("#galeria-works").elastic_grid({
             'showAllText' : 'All',
             'filterEffect': 'popup', // moveup, scaleup, fallperspective, fly, flip, helix , popup
@@ -73,18 +109,29 @@ appMG.controller('last-works', ['$scope', function($scope){
             'items' :
             [
                 {
-                    'title'         : 'Azuki bean',
-                    'description'   : 'Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage soko coriander sweet pepper water spinach winter purslane shallot tigernut lentil beetroot.Swiss chard pumpkin bunya nuts maize plantain aubergine napa cabbage.',
-                    'thumbnail'     : ['images/small/1.jpg', 'images/small/2.jpg', 'images/small/3.jpg', 'images/small/10.jpg', 'images/small/11.jpg'],
-                    'large'         : ['images/large/1.jpg'],
+                    'title'         : 'Kaoh Website',
+                    'description'   : 'In this project I took charge of developing the website and its design, logo design and the design of the sliders. This web site has been used as CMS wordpress. It has been developed with HTML5, CSS3, Javascript and jQuery. It is completely responsive and optimized for SEO.',
+                    'thumbnail'     : ['images/kaoh-res-thumb.png'],
+                    'large'         : ['images/kaoh-res.png', 'images/kaoh-res.png'],
                     'button_list'   :
                     [
-                        { 'title':'Demo', 'url' : 'http://porfolio.bonchen.net/', 'new_window' : true },
-                        { 'title':'Download', 'url':'http://porfolio.bonchen.net/', 'new_window' : false}
+                        { 'title':'Website', 'url' : 'http://kaoh.es/', 'new_window' : true }
                     ],
-                    'tags'          : ['Self Portrait']
+                    'tags'          : ['Portfolio']
+                },
+                {
+                    'title'         : 'Percent Servicios Website',
+                    'description'   : 'In this project I took charge of developing the website and its design, logo design and the design of the sliders. This web site has been used as CMS wordpress. It has been developed with HTML5, CSS3, Javascript and jQuery. It is completely responsive and optimized for SEO.',
+                    'thumbnail'     : ['images/percent-servicios-res-thumb.png'],
+                    'large'         : ['images/percent-servicios-res.png', 'images/kaoh-res.png'],
+                    'button_list'   :
+                    [
+                        { 'title':'Website', 'url' : 'http://percentservicios.com/', 'new_window' : true }
+                    ],
+                    'tags'          : ['Real Estate']
                 }
             ]
         });
+        
     });
 }]);
