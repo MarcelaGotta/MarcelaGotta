@@ -35,6 +35,10 @@ text-decoration:none;}
 }
 .box-burger {
     padding: 25px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 35px;
 }
 .burger {
     width: 33px;
@@ -215,7 +219,7 @@ header {
     width: 86px;
     position: fixed;
     overflow: hidden;
-
+    padding: 40px 0;    
     z-index: 999;
     background-color: #428CA9;
         box-shadow: inset -16px 0px 0px 0px #2D689A;

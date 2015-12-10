@@ -41,3 +41,19 @@
         }
     }
 }
+@media (max-width: 767px) {
+    header {
+        display: none;
+        &.abierto {
+            display: block;
+        }
+        
+        padding: 20px 0;
+    }
+    .box-burger {
+        left: 25px;
+    }
+    body {
+        margin: 0;
+    }
+}
