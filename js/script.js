@@ -1,5 +1,78 @@
-var appMG = angular.module('appMG', ['ngRoute', 'ui.bootstrap', 'ngDialog']);
-appMG.config(['$routeProvider', function($routeProvider){
+var en = {
+    BETTEREXPERIENCE: 'For a better user experience Please write your name, or some nickname to refer to you',
+    NOTE: 'Note',
+    SEND: 'Send',
+    CANCEL: 'Cancel',
+    WELCOME: 'welcome',
+    HI: 'Hi',
+    MEWELCOME: "I'm freelance front-end developer, with 7+ year of professional experience working in various web related roles. I currently live in Madrid",
+    ILOVE: 'iLove',
+    ILOVEARRAY: "'Front-End Development', 'Videogames', 'Books'",
+    ABOUTITTLE: 'About Me',
+    PORTFOLIOTITTLE: 'My Portfolio',
+    MEDESCRIPTION1: "I'm a front-end developer specializing",
+    AND: 'and',
+    MEDESCRIPTION2: 'I have experience in developing web sites fully adaptable to any device', 
+    MEDESCRIPTION3: 'based on W3C standards. I Development CMS templates and I possess great knowledge in ',
+    MEDESCRIPTION4: "Everywhere that I do give my best, and offer websites with clean and optimal code for better positioning on search engines",
+    SKILLS: 'Skills',
+    WORKEXPERIENCE: 'Work Experience',
+    FRONTDEVELOPER: 'Front-End Developer',
+    WEBDEVELOPER: 'Web Developer',
+    TECNOIMPLEMENTED: 'Technologies Implemented',
+    LASTWORK: 'Lastest Works',
+    MYLAB: 'My Lab',
+    CONTACTME: 'Contact Me',
+    CONTACTFORM: 'Contact Form',
+    CONTACTINFORMATION: 'Contact Information',
+    IFYOU: 'If you have any questions you can send me a message and I will answer soon',
+    NAME: 'Name',
+    EMAIL: 'Email',
+    MESSAGE: 'Message',
+    WRITEYOUR: 'Write your',
+    YOURMESSAGE: 'Your Message Here',
+    DESTECNOLOGY: 'The technologies implemented for the development of this site are',
+    ABOUTHIS: 'About This Website'
+};
+var es = {
+    BETTEREXPERIENCE: 'Para una mejor experiencia de usuario, por favor escribe tu nombre o algún seudónimo para referirme a ti',
+    NOTE: 'Nota',
+    SEND: 'Enviar',
+    CANCEL: 'Cancelar',
+    WELCOME: 'bienvenido',
+    HI: 'Hola',
+    MEWELCOME: "Soy desarrolladora Front-End freelance, con más de 7 años de experiencia profesinal, he trabajado en varios proyectos con diferentes roles. Actualmente vivo en madrid",
+    ILOVE: 'yoAmo',
+    ILOVEARRAY: "'Desarrollo Front-End', 'Videojuegos', 'Libros'",
+    ABOUTITTLE: 'Sobre mi',
+    PORTFOLIOTITTLE: 'Mi Portafolio',
+    MEDESCRIPTION1: "Soy una desarrolladora Front-End especializada en",
+    AND: 'y',
+    MEDESCRIPTION2: 'Tengo experiencia desarrollando sitios web adaptables a cualquier dispositivo', 
+    MEDESCRIPTION3: 'basandome en los estándares W3C. Desarrollo plantillas de diferentes CMS, y poseo grandes conocimientos en ',
+    MEDESCRIPTION4: "En todo lo que hago doy lo mejor de mi, y ofrezco sitios web con código limpio y optimizado para  el posicionamiento en buscadores",
+    SKILLS: 'Habilidades',
+    WORKEXPERIENCE: 'Experiencia Laboral',
+    FRONTDEVELOPER: 'Desarrolladora Front-End',
+    WEBDEVELOPER: 'Desarrolladora Web',
+    TECNOIMPLEMENTED: 'Tecnologías Implementadas',
+    LASTWORK: 'Últimos Trabajos',
+    MYLAB: 'Mi Laboratorio',
+    CONTACTME: 'Contáctame',
+    CONTACTFORM: 'Formulario de Contacto',
+    CONTACTINFORMATION: 'Información de Contacto',
+    IFYOU: 'Si tienes alguna duda puedes enviarme un mensaje y te responderé lo más pronto posible',
+    NAME: 'Nombre',
+    EMAIL: 'Correo',
+    MESSAGE: 'Mensaje',
+    WRITEYOUR: 'Escribe tu',
+    YOURMESSAGE: 'Tu Mensaje Aquí',
+    DESTECNOLOGY: 'Las tecnologías implementadas para el desarrollo de este sitio web han sido',
+    ABOUTHIS: 'Sobre este sitio web'
+};
+
+var appMG = angular.module('appMG', ['ngRoute', 'ui.bootstrap', 'ngDialog', 'pascalprecht.translate']);
+appMG.config(['$routeProvider', '$translateProvider', function($routeProvider, $translateProvider){
     $routeProvider.when('/', {
         templateUrl: 'home.html'
     }).when('/about', {
@@ -9,11 +82,15 @@ appMG.config(['$routeProvider', function($routeProvider){
     }).when('/contact', {
         templateUrl: 'contact.html'
     }).when('/website', {
-        templateUrl: 'website.html'
+        templateUrl: 'website.html' 
     }).otherwise({
         redirectTo: '/',
         templateUrl: '404.html'
     });    
+    $translateProvider.translations('en', en);
+    $translateProvider.translations('es', es);
+    $translateProvider.preferredLanguage('en');
+     $translateProvider.use('en');
 }]);
 appMG.run(['$rootScope', function($rootScope){
     $rootScope.modelClose = false;
@@ -36,6 +113,7 @@ appMG.controller('homeCrtl', ['$scope', 'ngDialog', '$rootScope', function($scop
     $(function(){
         var fullHeight = $(document).height();
         $('body').css('min-height', fullHeight);
+        $('main').css('min-height', fullHeight - $('footer').innerHeight());
     });
     
 }]);
@@ -85,13 +163,17 @@ appMG.controller('aboutCrtl', ['$scope', '$rootScope', function($scope, $rootSco
         },2000);
     });
 }]);
-appMG.controller('mainCrtl', ['$scope', function($scope){
+appMG.controller('mainCrtl',   ['$scope', '$translate', function($scope, $translate){
         $scope.isActive = false;
         $scope.isOpen = false;
           $scope.activeButton = function() {
             $scope.isActive = !$scope.isActive;
             $scope.isOpen = !$scope.isOpen;
           };
+    
+    $scope.checked = function() {
+       $translate.use(($translate.use() === 'en') ? 'es' : 'en');
+    }
         
 }]);
 

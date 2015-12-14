@@ -3,16 +3,16 @@ main.portfolio(data-ng-controller="last-works")
         .container
             .row
                 .col-xs-12.box-titulo
-                    h1 My Portfolio
+                    h1 {{ 'PORTFOLIOTITTLE' | translate }}
     .container        
         section.row
             .col-xs-12
-                h2 Lastest Works
+                h2 {{ 'LASTWORK' | translate }}
             .col-xs-12
                 #galeria-works
         section.row
             .col-xs-12
-                h2 My Lab
+                h2 {{ 'MYLAB' | translate }}
             .col-xs-6
                 iframe(height='268', scrolling='no', src='//codepen.io/MarcelaGotta/embed/zxrQZZ/?height=268&theme-id=10569&default-tab=result', frameborder='no', allowtransparency='true', allowfullscreen='true', style='width: 100%;')
                   | See the Pen 

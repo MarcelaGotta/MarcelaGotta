@@ -21,25 +21,25 @@
           </div>
           <div class="type-presentation">
             <div class="triangle"></div>
-            <p> <span class="var">var </span><span class="variable">welcome </span><span class="equal">= </span><span class="string">"Hi, <strong>{{nombre}}</strong> I'm freelance front-end developer, with 7+ year of professional experience working in various web related roles. I currently live in Madrid".</span></p>
+            <p> <span class="var">var </span><span class="variable">{{ 'WELCOME' | translate }}</span><span class="equal">= </span><span class="string">"{{ 'HI' | translate }}, <strong>{{nombre}}</strong> {{ 'MEWELCOME' | translate }}".</span></p>
           </div><small class="ilove">
-            <p> </p><span class="var">var </span>iLove <span class="equal">= </span>[<span class="string">'Front-End Development', 'Videogames', 'Books'</span>]</small>
+            <p> </p><span class="var">var </span>{{ 'ILOVE' | translate }}<span class="equal">= </span>[<span class="string">{{ 'ILOVEARRAY' | translate }}</span>]</small>
         </div>
       </div>
-      <div class="col-xs-12 buttons"><a href="#/about" type="button" class="btn btn-success btn-more">About me</a><a href="#/portfolio" type="button" class="btn btn-success btn-more">My portfolio</a></div>
+      <div class="col-xs-12 buttons"><a href="#/about" type="button" class="btn btn-success btn-more">{{ 'ABOUTITTLE' | translate }}</a><a href="#/portfolio" type="button" class="btn btn-success btn-more">{{ 'PORTFOLIOTITTLE' | translate }}</a></div>
     </section>
   </div>
 </main>
 <script type="text/ng-template" id="content1">
   <form role="form" class="form-name form-inline form-send">
     <div class="presentation">
-      <h4>Note</h4>
-      <p>For a better user experience Please write your name, or some nickname to refer to you</p>
+      <h4>{{ 'NOTE' | translate }}</h4>
+      <p>{{ 'BETTEREXPERIENCE' | translate }}</p>
     </div>
     <div class="box-what-name">
-      <input type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required="" class="form-control nombre"/>
-      <input type="submit" ng-click="confirm(1)" value="Send" class="btn btn-success btn-send"/>
-      <button type="button" ng-click="closeThisDialog('Some value')" class="btn btn-default btn-skip">Cancel</button>
+      <input type="text" data-ng-model="$root.nombre" title="Please, write your name" placeholder="{{ 'WRITEYOUR' | translate }} {{ 'NAME' | translate }} :)" required="" class="form-control nombre"/>
+      <input type="submit" data-ng-click="confirm(1)" value="{{ 'SEND' | translate }}" class="btn btn-success btn-send"/>
+      <button type="button" data-ng-click="closeThisDialog('Some value')" class="btn btn-default btn-skip">{{ 'CANCEL' | translate }}</button>
     </div>
   </form>
 </script>

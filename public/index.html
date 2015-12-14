@@ -12,10 +12,10 @@
     <link type="text/css" rel="stylesheet" href="css/styles.min.css"/>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
   </head>
-  <body data-ng-controller="mainCrtl" ng-class="{'cerrado': isActive}">
-    <ng-include src=" 'inc/header.html' "></ng-include>
-    <div ng-view=""></div>
-    <ng-include src=" 'inc/footer.html' ">   </ng-include>
+  <body data-ng-controller="mainCrtl" data-ng-class="{'cerrado': isActive}">
+    <div data-ng-include=" 'inc/header.html' "></div>
+    <div data-ng-view=""></div>
+    <div data-ng-include=" 'inc/footer.html' ">   </div>
+    <script src="/js/scripts.min.js"></script>
   </body>
-  <script src="/js/scripts.min.js"></script>
 </html>

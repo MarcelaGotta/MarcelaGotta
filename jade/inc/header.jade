@@ -1,9 +1,12 @@
-.box-burger( ng-click="activeButton()")
-    .burger(ng-class="{'open': isOpen}")
+.box-burger( data-ng-click="activeButton()")
+    .burger(data-ng-class="{'open': isOpen}")
         .burger-brick
         .burger-brick.middle
         .burger-brick
-header(ng-class="{'abierto': isActive}")
+.lang-box
+    input#s4(type='checkbox'  data-ng-click="checked()")
+    label.slider-v2(for='s4')
+header(data-ng-class="{'abierto': isActive}")
     a(href="#/")
         figure.logo
             img(src="images/logo.png" alt="Marcela Gotta")

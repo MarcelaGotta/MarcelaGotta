@@ -20,31 +20,31 @@ main.home(data-ng-controller="homeCrtl")
                         .triangle
                         p 
                             span.var var 
-                            span.variable welcome 
+                            span.variable {{ 'WELCOME' | translate }}
                             span.equal = 
-                            span.string "Hi, 
+                            span.string "{{ 'HI' | translate }}, 
                                 strong {{nombre}}
-                                |  I'm freelance front-end developer, with 7+ year of professional experience working in various web related roles. I currently live in Madrid".
+                                |  {{ 'MEWELCOME' | translate }}".
                     small.ilove
                         p 
                         span.var var 
-                        | iLove 
+                        | {{ 'ILOVE' | translate }}
                         span.equal = 
                         | [
-                        span.string 'Front-End Development', 'Videogames', 'Books'
+                        span.string {{ 'ILOVEARRAY' | translate }}
                         | ]
             
             .col-xs-12.buttons
-                a(href="#/about" type="button" class="btn btn-success btn-more") About me
-                a(href="#/portfolio" type="button" class="btn btn-success btn-more") My portfolio
+                a(href="#/about" type="button" class="btn btn-success btn-more") {{ 'ABOUTITTLE' | translate }}
+                a(href="#/portfolio" type="button" class="btn btn-success btn-more") {{ 'PORTFOLIOTITTLE' | translate }}
 script(type="text/ng-template" id="content1")
                 
 
     form(role='form').form-name.form-inline.form-send
         .presentation
-            h4 Note
-            p For a better user experience Please write your name, or some nickname to refer to you
+            h4 {{ 'NOTE' | translate }}
+            p {{ 'BETTEREXPERIENCE' | translate }}
         .box-what-name
-            input(type="text" ng-model="$root.nombre" title="Please, write your name" placeholder="Your Name Here :)" required='').form-control.nombre
-            input(type="submit" class="btn btn-success btn-send" ng-click="confirm(1)" value="Send") 
-            button(type="button" class="btn btn-default btn-skip" ng-click="closeThisDialog('Some value')") Cancel
+            input(type="text" data-ng-model="$root.nombre" title="Please, write your name" placeholder="{{ 'WRITEYOUR' | translate }} {{ 'NAME' | translate }} :)" required='').form-control.nombre
+            input(type="submit" class="btn btn-success btn-send" data-ng-click="confirm(1)" value="{{ 'SEND' | translate }}") 
+            button(type="button" class="btn btn-default btn-skip" data-ng-click="closeThisDialog('Some value')") {{ 'CANCEL' | translate }}

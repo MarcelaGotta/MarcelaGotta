@@ -1,12 +1,16 @@
 
-<div ng-click="activeButton()" class="box-burger">
-  <div ng-class="{'open': isOpen}" class="burger">
+<div data-ng-click="activeButton()" class="box-burger">
+  <div data-ng-class="{'open': isOpen}" class="burger">
     <div class="burger-brick"></div>
     <div class="burger-brick middle"></div>
     <div class="burger-brick"></div>
   </div>
 </div>
-<header ng-class="{'abierto': isActive}"><a href="#/">
+<div class="lang-box">
+  <input id="s4" type="checkbox" data-ng-click="checked()"/>
+  <label for="s4" class="slider-v2"></label>
+</div>
+<header data-ng-class="{'abierto': isActive}"><a href="#/">
     <figure class="logo"><img src="images/logo.png" alt="Marcela Gotta"/></figure></a>
   <nav class="menu-principal">
     <ul id="list" class="nav">

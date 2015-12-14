@@ -56,4 +56,28 @@
     body {
         margin: 0;
     }
+    
+    .lang-box {
+        top: 5px;
+        right: 5px;
+        .slider-v2 {
+            width: 40px;
+            height: 40px;
+            &:before {
+                top:0;
+                left: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                background-position-x: 60px;
+            }
+            
+            &:after {
+                display: none;
+            }
+        }
+        input:checked + .slider-v2::before {
+            background-size: cover;
+        }
+    }
 }

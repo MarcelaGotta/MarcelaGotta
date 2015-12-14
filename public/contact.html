@@ -4,40 +4,40 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 box-titulo">
-          <h1>Contact Me</h1>
+          <h1>{{ 'CONTACTME' | translate }}</h1>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <h2>Contact Information</h2>
+          <h2>{{ 'CONTACTINFORMATION' | translate }}</h2>
           <ul class="ul-information">
             <li><span class="glyphicon glyphicon-envelope"></span>hola@marcelagotta.com</li>
             <li><span class="glyphicon glyphicon-phone-alt"></span>+34 684 141 301</li>
           </ul>
         </div>
         <div class="col-xs-12 col-sm-6">
-          <h2>Contact Form</h2>
+          <h2>{{ 'CONTACTFORM' | translate }}</h2>
           <div id="contact_form">
             <div class="wrap">
               <div class="form">
                 <div class="success">Thanks! <br/>Your message has been send!<br/></div>
-                <p class="description">{{nombre}} If you have any questions you can send me a message and I will answer soon</p>
+                <p class="description">{{nombre}} {{ 'IFYOU' | translate }}</p>
                 <p class="status"></p>
                 <form method="post" class="clearfix">
                   <div class="row">
-                    <label>Name</label>
-                    <input type="text" name="name" placeholder="Write your name" value="{{nombre}}" class="input"/>
+                    <label>{{ 'NAME' | translate }}</label>
+                    <input type="text" name="name" placeholder="{{ 'WRITEYOUR' | translate }} {{ 'NAME' | translate }}" value="{{nombre}}" class="input"/>
                   </div>
                   <div class="row">
-                    <label>Email</label>
-                    <input type="text" name="email" placeholder="Write your email"/>
+                    <label>{{ 'EMAIL' | translate }}</label>
+                    <input type="text" name="email" placeholder="{{ 'WRITEYOUR' | translate }} {{ 'EMAIL' | translate }}"/>
                   </div>
                   <div class="row">
-                    <label>Message</label>
-                    <textarea name="message" placeholder="Your message here"></textarea>
+                    <label>{{ 'MESSAGE' | translate }}</label>
+                    <textarea name="message" placeholder="{{ 'YOURMESSAGE' | translate }}"></textarea>
                   </div>
                   <div class="row">
-                    <input type="submit" value="Send" class="transition submit"/>
+                    <input type="submit" value="{{ 'SEND' | translate }}" class="transition submit"/>
                   </div>
                 </form>
               </div>

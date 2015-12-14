@@ -3,7 +3,7 @@ main.about(data-ng-controller="aboutCrtl")
         .container
             .row
                 .col-xs-12.box-titulo
-                    h1 About Me
+                    h1 {{ 'ABOUTITTLE' | translate }}
     .container
         section.row
             .col-xs-12.col-sm-4.pull-right
@@ -12,25 +12,23 @@ main.about(data-ng-controller="aboutCrtl")
             .col-xs-12.col-sm-8
                 p.about-me  
                     strong {{nombre}}
-                    | , I'm a front-end developer specializing 
+                    | , {{ 'MEDESCRIPTION1' | translate }} 
                     strong HTML5
                     | , 
                     strong CSS3 
-                    | and 
+                    | {{ 'AND' | translate }} 
                     strong Javascript
-                    | . I have experience in developing web sites fully adaptable to any device (
+                    | . {{ 'MEDESCRIPTION2' | translate }} (
                     strong responsive
-                    | ) based on 
-                    strong W3C 
-                    | standards. I Development CMS templates and I possess great knowledge in 
+                    | ) {{ 'MEDESCRIPTION3' | translate }} 
                     strong Wordpress, Joomla and PrestaShop
-                    | . Everywhere that I do give my best, and offer websites with clean and optimal code for better positioning on search engines (
+                    | . {{ 'MEDESCRIPTION4' | translate }} (
                     strong SEO
                     | ).
             
         section.row
             .col-xs-12
-                h2 Skills
+                h2 {{ 'SKILLS' | translate }} 
             .col-xs-12.col-sm-6
                 .skillbar.clearfix(data-percent='90%')
                   .skillbar-title
@@ -105,7 +103,7 @@ main.about(data-ng-controller="aboutCrtl")
                   .skill-bar-percent 60%
         section.row
             .col-xs-12
-                h2 Work Experience
+                h2 {{ 'WORKEXPERIENCE' | translate }} 
             .col-xs-12
                 #timeline
                   .timeline-item
@@ -118,8 +116,8 @@ main.about(data-ng-controller="aboutCrtl")
                         c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z')
                     .timeline-content
                       h2 Freelance 2008 - currently
-                      p Front-end Developer
-                      h3 Technologies implemented:
+                      p {{ 'FRONTDEVELOPER' | translate }} 
+                      h3 {{ 'TECNOIMPLEMENTED' | translate }}:
                       .group-tecno
                         img(src="images/html5-logo.png", alt="Logo HTML5")
                         img(src="images/css3.png", alt="Logo CSS3")
@@ -135,8 +133,8 @@ main.about(data-ng-controller="aboutCrtl")
                       span.glyphicon.glyphicon-thumbs-up
                     .timeline-content.right
                       h2 Social Media 2008 - 2010
-                      p Front-end Developer
-                      h3 Technologies implemented:
+                      p {{ 'FRONTDEVELOPER' | translate }} 
+                      h3 {{ 'TECNOIMPLEMENTED' | translate }}:
                       .group-tecno
                         img(src="images/html5-logo.png", alt="Logo HTML5")
                         img(src="images/css3.png", alt="Logo CSS3")
@@ -148,7 +146,7 @@ main.about(data-ng-controller="aboutCrtl")
                       span.glyphicon.glyphicon-star
                     .timeline-content
                       h2 Ozfest 2011 - 2013
-                      p Web Developer
+                      p {{ 'WEBDEVELOPER' | translate }} 
                       h3 Technologies implemented:
                       .group-tecno
                         img(src="images/html5-logo.png", alt="Logo HTML5")
@@ -161,7 +159,7 @@ main.about(data-ng-controller="aboutCrtl")
                       span.glyphicon.glyphicon-shopping-cart
                     .timeline-content.right
                       h2 Bardate Maquinarias 2014
-                      p Front-end Developer
+                      p {{ 'FRONTDEVELOPER' | translate }} 
                       h3 Technologies implemented:
                       .group-tecno
                         img(src="images/html5-logo.png", alt="Logo HTML5")
@@ -174,8 +172,8 @@ main.about(data-ng-controller="aboutCrtl")
                       span.glyphicon.glyphicon-home
                     .timeline-content
                       h2 Percent Servicios 2014 - 2015
-                      p Web Developer
-                      h3 Technologies implemented:
+                      p {{ 'WEBDEVELOPER' | translate }}
+                      h3 {{ 'TECNOIMPLEMENTED' | translate }}:
                       .group-tecno
                         img(src="images/html5-logo.png", alt="Logo HTML5")
                         img(src="images/css3.png", alt="Logo CSS3")
@@ -187,8 +185,8 @@ main.about(data-ng-controller="aboutCrtl")
                       span.glyphicon.glyphicon-briefcase
                     .timeline-content.right
                       h2 VASS Digital 2015 - currently
-                      p Front-End Developer
-                      h3 Technologies implemented:
+                      p {{ 'FRONTDEVELOPER' | translate }}
+                      h3 {{ 'TECNOIMPLEMENTED' | translate }}:
                       .group-tecno
                         img(src="images/html5-logo.png", alt="Logo HTML5")
                         img(src="images/css3.png", alt="Logo CSS3")
