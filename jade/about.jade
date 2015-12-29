@@ -10,7 +10,8 @@ main.about(data-ng-controller="aboutCrtl")
                 figure.img-me
                     img(src="images/me-img.png" alt="Marcela Gotta")
             .col-xs-12.col-sm-8
-                p.about-me  
+                p.about-me
+                    | {{ 'HI' | translate }}
                     strong {{nombre}}
                     | , {{ 'MEDESCRIPTION1' | translate }} 
                     strong HTML5
@@ -147,7 +148,7 @@ main.about(data-ng-controller="aboutCrtl")
                     .timeline-content
                       h2 Ozfest 2011 - 2013
                       p {{ 'WEBDEVELOPER' | translate }} 
-                      h3 Technologies implemented:
+                      h3 {{ 'TECNOIMPLEMENTED' | translate }}:
                       .group-tecno
                         img(src="images/html5-logo.png", alt="Logo HTML5")
                         img(src="images/css3.png", alt="Logo CSS3")
@@ -160,7 +161,7 @@ main.about(data-ng-controller="aboutCrtl")
                     .timeline-content.right
                       h2 Bardate Maquinarias 2014
                       p {{ 'FRONTDEVELOPER' | translate }} 
-                      h3 Technologies implemented:
+                      h3 {{ 'TECNOIMPLEMENTED' | translate }}:
                       .group-tecno
                         img(src="images/html5-logo.png", alt="Logo HTML5")
                         img(src="images/css3.png", alt="Logo CSS3")
